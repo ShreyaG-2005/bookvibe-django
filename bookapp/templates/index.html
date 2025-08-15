@@ -1,0 +1,442 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRW</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js}"></script>
+    <link href="{% static 'img/logo.png' %}" rel="icon">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+      *, *::before, *::after{
+         margin: 0;
+         padding:0;
+         box-sizing:border-box;
+         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+      }
+  
+      .trendingfinal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    width: 100%;
+    margin: 0;
+    background-color: #060913;
+    color: #fff;
+    overflow: hidden;
+    background-image: url(img/bg-image2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+      .swiper{
+         max-width:100%;
+          padding:50px 0;
+          
+      }
+      .swiper-slide{
+          position:relative;
+          width:320px;
+          aspect-ratio: 3/4;
+          border-radius: 14px;
+          border: 1px solid rgba(177,177,177,0.4);
+      }
+      .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the slide while maintaining their aspect ratio */
+    border-radius: inherit;
+    user-select: none;
+}
+      .title{
+          position:absolute;
+          bottom:5px;
+          left:50%;
+          transform:translate(-50%,-20%);
+          -ms-transform:translate(-50%,-20%);
+          width:max-content;
+          text-align:center;
+          padding:10px 18px;
+         border-radius:8px;
+  
+  
+      }
+      .title span{
+          font-size:1.2rem;
+          font-weight:600;
+      }
+      .swiper-slide-active.tilte{
+          bottom:-10px;
+          box-shadow:0 20px 30px 20px rgba(25,43,206,0.60);
+  
+      }
+      .swiper-pagination{
+          --swiper-pagination-bullet:-6px;
+      }
+      .swiper-pagination-bullet{
+          width:14px;
+          height:14px;
+          background-color:#fff;
+          border-radius: 50%;
+          transition:all 0.3s ease-in-out;
+  
+      }
+      .swiper-pagination-bullet-active{
+         
+          background-color: rgba(25,43,206,0.60);
+          border-radius:14px;
+      }
+  
+      @media (max-width:1100px){
+  .swiper-slide{
+      width:300px;
+  }
+      }
+      @media (max-width:900px){
+  .swiper-slide{
+      width:250px;
+  }
+      }
+  
+  </style>
+    
+</head>
+<body>
+    {% include 'header.html' %}
+            <br>
+            <br><br>
+            <!--   Main content  -->
+            <main>
+                    <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+  
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img id=imageposition src="{% static 'img/home2.jpg' %}" alt="Los Angeles" class="thumbnail mx-auto d-block" height="700px" width=" 1400px" padding="55px" >
+        <div class="carousel-caption">
+            <h5>Find Your Next Favorite Book</h5>
+            <p>" Dive into a world of stories, knowledge, and adventure.
+             Our curated recommendations are just what you need to spark your next great reading journey."</p>
+        </div>
+    </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/bookblack.jpg' %}" alt="Chicago" class="thumbnail mx-auto d-block" height="700px" width=" 1400px">
+        <div class="carousel-caption">
+            <h5> "Books that speak to your soul, adventure that ignites your imagination."</h5>
+            <p> "Find your perfect read from genres you'll love—one page at a time."</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/bookblack4.jpg' %}" alt="New York" class="thumbnail mx-auto d-block" height="700px" width=" 1400px">
+        <div class="carousel-caption">
+        <h5>"The future is now—step into worlds beyond imagination."</h5>
+        <p> "From space odysseys to mythical realms, find books that challenge reality and stretch your imagination."</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <br>
+  <!----------------------------------------------------------trendings------------------------------------------------------>
+  
+
+<!------------------------------------------- card carousel-->
+<!-- trendings-->
+ <div class="trendingfinal">
+  <h1>TRENDINGS<br>    "Books You Can't Miss"</h1>
+  <br>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="{% static 'img/the invisible life of addie larue.jpg' %}" alt="">
+        <div class="title">
+            
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/if we were villians.jpg' %}" alt="">
+        <div class="title">
+          
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/inheritance games.jpg' %}" alt="">
+        <div class="title">
+            
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/grandest games.jpg' %}" alt="">
+        <div class="title">
+            
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="{% static 'img/the book thief.jpg' %}" alt="">
+        <div class="title">
+           
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="{% static 'img/the secret history.jpg' %}" alt="">
+        <div class="title">
+            
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <img src="{% static 'img/the bell jar.jpg' %}" alt="">
+        <div class="title">
+            
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="{% static 'img/dune.jpg' %}" alt="">
+        <div class="title">
+            
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/six of crows.jpg' %}" alt="">
+        <div class="title">
+          
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  
+
+  </div>
+</div>
+
+
+<br>
+<!--------------------------------------------------------------------------------------------------------------------->
+<!--GENRE-->
+
+  <div class="container-title">
+    <h2 id="trending">------------GENRE----------<br>FIND BOOKS BY GENRE</h2>
+  </div>
+  <div class="container">
+  <div calss="row">
+    <div class="genre-wrapper">
+    <div class="col-gy-4 " >
+      <div class="genre">
+        <div>
+          <h1>Mystery</h1>
+        <img src="{% static 'img/mystery img.jpg' %}" width="100%">
+        <p>
+          "Can you crack the case?<br>
+           Unravel twists, secrets, and hidden clues in the world of mystery.<br>
+           Your next great detective story is waiting!"
+        </p>
+        
+      </div>
+      
+      </div>
+    </div><!-- mystery-->
+
+    <div class="col-md-4 " >
+      <div class="genre">
+        <div>
+          <h1>Dystopian</h1>
+        <img src="{% static 'img/dysto[ian 2.jpg' %}" width="100%">
+        <br>
+        <p>
+          " What if everything you knew was turned upside down ?<br>
+          Enter dark futures where survival is a fight, and hope is hard to find.<br>
+          Dive into dystopian worlds where nothing is as it seems!"
+        </p>
+      </div>
+      
+      </div>
+    </div><!-- dystopian-->
+
+    <div class="col-md-4 " >
+      <div class="genre">
+        <div>
+          <h1>Fantasy</h1>
+        <img src="{% static 'img/fantasy.webp' %}" width="100%"> <br>
+        <p>
+          " Ready to escape to a word beyond your wildest dreams?<br>
+          where magic is real,creatures roam, and epic adventures unfold.<br>
+          Dive into a fantasy realm like no more!"
+        </p>
+      </div>
+      
+      </div>
+    </div><!--fantasy-->
+</div>
+<br>
+<div class="genre-wrapper">
+    <div class="col-md-4 " >
+      <div class="genre">
+        <div>
+          <h1>Classics</h1>
+        <img src="{% static 'img/classics.jpg' %}" width="100%"> <br>
+        <p>
+          " Timeless stories,unforgettable characters.<br>
+          Explore the masterpieces that have stood the test of time."
+        </p>
+      </div>
+      
+      </div>
+    </div><!--classics-->
+
+    <div class="col-md-4 " >
+      <div class="genre">
+        <div>
+          <h1>Non Fiction</h1>
+        <img src="{% static 'img/non fiction.jpg' %}" width="100%"> <br>
+        <p>
+          " The truth will set you free,but first it will make you miserable."
+        </p>
+      </div>
+      
+      </div>
+    </div><!--non fiction-->
+
+    <div class="col-md-4 " >
+      <div class="genre">
+        <div>
+          <h1>Sci-Fic</h1>
+        <img src="{% static 'img/sci fic.jpg' %}" width="100%"> <br>
+        <p>
+          " Curious about future?<br>
+          Embark on a journey through time and technology."
+        </p>
+      </div>
+      
+      </div>
+    </div><!-- sci fic-->
+</div><!-- genre wrapper-->
+    </div>
+  </div>
+</main>
+
+
+
+
+
+
+
+
+<br>
+<br>
+<!-----------------------------------testimonials------------------------->
+<div  class="row" id="testimonialblock">
+  <div class="container section-title" data-aos="fade-up">
+    <h2 id="trending">-------- Testimonials ---------</h2>
+   </div>
+  <section class="testimonials">
+    <div class="testimonial-block">
+        <p class="testimonial-text">"I can't thank this website enough for introducing me to such incredible books. Every recommendation feels personal and thoughtfully curated. The books I've read have completely changed my perspective on life. Highly recommend this site to anyone looking for their next great read!"</p>
+        <p class="testimonial-author">– Sarah W.</p>
+    </div>
+
+    <div class="testimonial-block">
+        <p class="testimonial-text">"As an avid reader, I often struggle to find fresh, engaging books. This site has been a game-changer! Each recommendation is well-researched and unique. Whether you're looking for fiction, non-fiction, or self-help, this site has something for everyone!"</p>
+        <p class="testimonial-author">– Tom D.</p>
+    </div>
+
+    <div class="testimonial-block">
+        <p class="testimonial-text">"I’ve discovered so many hidden gems through this site! The book suggestions are always spot on, and the reviews give such great insight. I trust their recommendations completely. I wouldn’t have picked up some of my all-time favorites without it!"</p>
+        <p class="testimonial-author">– Emily R.</p>
+    </div>
+
+    <div class="testimonial-block">
+        <p class="testimonial-text">"I’m blown away by how accurate and thoughtful the book suggestions are. They’ve opened me up to genres and authors I never would have considered on my own. Every book recommended feels like it was chosen just for me!"</p>
+        <p class="testimonial-author">– Daniel M.</p>
+    </div>
+
+    <div class="testimonial-block">
+        <p class="testimonial-text">"This website has been a lifesaver in my quest for great books. The recommendations are spot-on and have added so much value to my reading list. It’s like having a personal book curator. I’ve found so many favorites that I would’ve otherwise missed!"</p>
+        <p class="testimonial-author">– Lisa H.</p>
+    </div>
+</section>
+</div>
+
+
+
+            
+<br>
+
+
+       <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h3>About Us</h3>
+      <p>We are passionate about books, providing a curated collection of trending and classic reads for every book lover. Join our community of readers and explore the world of literature.</p>
+    </div>
+
+    <div class="footer-section categories">
+      <h3>Book Categories</h3>
+      <ul>
+        <li><a href="#">Dsytopian</a></li>
+        <li><a href="#">Non-Fiction</a></li>
+        <li><a href="#">Mystery</a></li>
+        <li><a href="#">Fantasy</a></li>
+        <li><a href="#">Science Fiction</a></li>
+        <li><a href="#">Classics</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#" target="_blank" class="social-icon"><i class="bi bi-facebook"></i>bookvive@facebook.com</a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i>@BookVibeBooks</a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i>@BookVibeReads</a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-pinterest"></i>@BookVibeBooks</a>
+      </div>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Contact Us</h3>
+      <ul>
+        <li>Email: <a href="mailto:info@bookstore.com">info@bookstore.com</a></li>
+        <li>Phone: +1 (123) 456-7890</li>
+        <li>Address: 123 Book Street, Booktown</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 BookVibe. By SHREYA GOKULE.</p>
+  </div>
+</footer>
+ 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>  
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/paticles.min.js "></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body> 
+</body>
+</html>

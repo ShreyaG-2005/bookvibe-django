@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classics Genre</title>
+        
+</head>
+<body class="book-recommendations-page" >
+    {% include 'header.html' %}
+    <br>
+    <br>
+    <div class="container">
+        <!-- Row 1 -->
+        <div class="book-row">
+            <!-- Pride and Prejudice -->
+            <div class="book" id="pride-and-prejudice">
+                <div class="book-cover" style="background-image:url('/static/img/pride_and_prejudice.jpg')"></div>
+                <div class="book-details">
+                    <h2>Pride and Prejudice</h2>
+                    <p class="author">by Jane Austen</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ 4.9/5</p>
+                    <p class="description">A romantic novel that explores the issues of class, marriage, and family in early 19th-century England.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+
+            <!-- Crime and Punishment -->
+            <div class="book" id="crime-and-punishment">
+                <div class="book-cover" style="background-image:url('/static/img/crime\ and\ punishment.jpg')"></div>
+                <div class="book-details">
+                    <h2>Crime and Punishment</h2>
+                    <p class="author">by Fyodor Dostoevsky</p>
+                    <p class="rating">⭐⭐⭐⭐ 4.8/5</p>
+                    <p class="description">A psychological drama that delves into the mind of a young man struggling with guilt after committing a crime.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="book-row">
+            <!-- Jane Eyre -->
+            <div class="book" id="jane-eyre">
+                <div class="book-cover" style="background-image:url('/static/img/jane\ eyre.jpg')"></div>
+                <div class="book-details">
+                    <h2>Jane Eyre</h2>
+                    <p class="author">by Charlotte Brontë</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ 4.8/5</p>
+                    <p class="description">The story of an orphaned girl who becomes a governess and falls in love with her mysterious employer.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+
+            <!-- Wuthering Heights -->
+            <div class="book" id="wuthering-heights">
+                <div class="book-cover" style="background-image:url('/static/img/wuthering\ heights.jpg')"></div>
+                <div class="book-details">
+                    <h2>Wuthering Heights</h2>
+                    <p class="author">by Emily Brontë</p>
+                    <p class="rating">⭐⭐⭐⭐ 4.7/5</p>
+                    <p class="description">A dark and passionate story of love, obsession, and revenge set on the Yorkshire moors.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="book-row">
+            <!-- The Great Gatsby -->
+            <div class="book" id="the-great-gatsby">
+                <div class="book-cover" style="background-image:url('/static/img/the\ great\ gatsby.jpg')"></div>
+                <div class="book-details">
+                    <h2>The Great Gatsby</h2>
+                    <p class="author">by F. Scott Fitzgerald</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ 4.8/5</p>
+                    <p class="description">A tale of love, decadence, and the American Dream in the Roaring Twenties, centered on the mysterious Gatsby.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+
+            <!-- To Kill a Mockingbird -->
+            <div class="book" id="to-kill-a-mockingbird">
+                <div class="book-cover" style="background-image:url('/static/img/to-kill-a-mockingbird-.jpg')"></div>
+                <div class="book-details">
+                    <h2>To Kill a Mockingbird</h2>
+                    <p class="author">by Harper Lee</p>
+                    <p class="rating">⭐⭐⭐⭐ 4.7/5</p>
+                    <p class="description">A gripping tale of racial injustice and moral growth set in the American South during the 1930s.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="book-row">
+            <!-- Frankenstein -->
+            <div class="book" id="frankenstein">
+                <div class="book-cover" style="background-image:url('/static/img/frankenstein.jpg')"></div>
+                <div class="book-details">
+                    <h2>Frankenstein</h2>
+                    <p class="author">by Mary Shelley</p>
+                    <p class="rating">⭐⭐⭐⭐ 4.6/5</p>
+                    <p class="description">A gothic novel about a scientist who creates a monstrous creature and the consequences of his actions.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+
+            <!-- Dracula -->
+            <div class="book" id="dracula">
+                <div class="book-cover" style="background-image:url('/static/img/dracula.jpg')"></div>
+                <div class="book-details">
+                    <h2>Dracula</h2>
+                    <p class="author">by Bram Stoker</p>
+                    <p class="rating">⭐⭐⭐⭐ 4.7/5</p>
+                    <p class="description">A tale of horror, obsession, and dark desire centered on the infamous vampire Count Dracula.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="book-row">
+            <!-- Les Misérables -->
+            <div class="book" id="les-miserables">
+                <div class="book-cover" style="background-image:url('/static/img/les\ miserables.jpg')"></div>
+                <div class="book-details">
+                    <h2>Les Misérables</h2>
+                    <p class="author">by Victor Hugo</p>
+                    <p class="rating">⭐⭐⭐⭐ 4.6/5</p>
+                    <p class="description">A sweeping tale of justice, love, and redemption set against the backdrop of post-revolutionary France.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+
+            <!-- Murakami -->
+            <div class="book" id="murakami">
+                <div class="book-cover" style="background-image:url('/static/img/murakami.png')"></div>
+                <div class="book-details">
+                    <h2>Murakami</h2>
+                    <p class="author">by Haruki Murakami</p>
+                    <p class="rating">⭐⭐⭐⭐ 4.8/5</p>
+                    <p class="description">A collection of works by the celebrated Japanese author, exploring themes of loneliness, love, and surrealism.</p>
+                    <button class="more-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>We are passionate about books, providing a curated collection of trending and classic reads for every book lover. Join our community of readers and explore the world of literature.</p>
+          </div>
+      
+          <div class="footer-section categories">
+            <h3>Book Categories</h3>
+            <ul>
+              <li><a href="#">Dsytopian</a></li>
+              <li><a href="#">Non-Fiction</a></li>
+              <li><a href="#">Mystery</a></li>
+              <li><a href="#">Fantasy</a></li>
+              <li><a href="#">Science Fiction</a></li>
+              <li><a href="#">Classics</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" target="_blank" class="social-icon"><i class="bi bi-facebook"></i>bookvive@facebook.com</a>
+              <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i>@BookVibeBooks</a>
+              <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i>@BookVibeReads</a>
+              <a href="#" target="_blank" class="social-icon"><i class="fab fa-pinterest"></i>@BookVibeBooks</a>
+            </div>
+          </div>
+      
+          <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>Email: <a href="mailto:info@bookstore.com">info@bookstore.com</a></li>
+              <li>Phone: +1 (123) 456-7890</li>
+              <li>Address: 123 Book Street, Booktown</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 BookVibe. By SHREYA GOKULE.</p>
+        </div>
+      </footer>
+</body>
+</html>

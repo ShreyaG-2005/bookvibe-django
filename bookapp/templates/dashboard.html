@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="csrf-token" content="{{ csrf_token }}">
+
+    
+    
+    <title>Book Tracker</title>
+    <style>
+        /* Add styles here as you already have them */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding-left: 20%;
+            background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+            display: justify-content;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            align-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin-top: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            align-content: center;
+
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+        }
+
+        #book-search {
+            width: calc(100% - 150px);
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #book-search:focus {
+            border-color: #4CAF50;
+        }
+
+        #search-button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease;
+            width: 130px;
+            margin-left: 10px;
+        }
+
+        #search-button:hover {
+            background-color: #45a049;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #book-info {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #book-details {
+            margin-top: 15px;
+        }
+
+        #book-details p {
+            text-align: left;
+            font-size: 18px;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        #book-details strong {
+            color: #007BFF;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Book Sections Styling */
+        .book-sections {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .section {
+            width: 30%;
+            background-color: #fafafa;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+        }
+
+        .section h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        li {
+            background-color: #e0e0e0;
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #c8c8c8;
+            transform: translateX(10px);
+        }
+
+        li img {
+            max-width: 60px;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        li span {
+            flex-grow: 1;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Button inside List Items */
+        li button {
+            background-color: #f44336;
+            font-size: 14px;
+            padding: 8px 16px;
+            margin-left: 15px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        li button:hover {
+            background-color: #d32f2f;
+        }
+        
+    </style>
+  
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Book Tracker</h1>
+        
+        <!-- Search Section -->
+        <div class="search-container">
+            <input type="text" id="book-search" placeholder="Search for a book...">
+            <button id="search-button">Search</button>
+        </div>
+        
+        <div id="book-info">
+            <img id="book-cover" src="" alt="Book Cover" />
+            <div id="book-details">
+                <p><strong>Title:</strong> <span id="book-title">Title</span></p>
+                <p><strong>Author:</strong> <span id="book-author">Author</span></p>
+                <p><strong>Description:</strong> <span id="book-description">Description</span></p>
+                <p><strong>Rating:</strong> <span id="book-rating">Rating</span></p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <button id="tbr-button">Add to TBR</button>
+        <button id="reading-button">Add to Reading</button>
+        <button id="completed-button">Add to Completed</button>
+
+        <!-- Book Sections -->
+        <div class="book-sections">
+            <!-- TBR Section -->
+            <div class="section" id="tbr-section">
+                <h3>TBR</h3>
+                <ul id="tbr-list">
+                    <!-- Books will be dynamically added here -->
+                </ul>
+            </div>
+
+            <!-- Reading Section -->
+            <div class="section" id="reading-section">
+                <h3>Reading</h3>
+                <ul id="reading-list">
+                    <!-- Books will be dynamically added here -->
+                </ul>
+            </div>
+
+            <!-- Completed Section -->
+            <div class="section" id="completed-section">
+                <h3>Completed</h3>
+                <ul id="completed-list">
+                    <!-- Books will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tbrButton = document.getElementById('tbr-button');
+            const readingButton = document.getElementById('reading-button');
+            const completedButton = document.getElementById('completed-button');
+            
+            // Initializing the book lists
+            const tbrList = document.getElementById('tbr-list');
+            const readingList = document.getElementById('reading-list');
+            const completedList = document.getElementById('completed-list');
+            
+            let currentBook = null;
+
+            // Function to search books using Google Books API
+            async function searchBooks() {
+                const query = document.getElementById('book-search').value;
+                if (!query) return;
+
+                const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+                const data = await response.json();
+
+                if (data.items) {
+                    const book = data.items[0].volumeInfo;
+                    currentBook = {
+                        id: data.items[0].id,
+                        title: book.title,
+                        author: book.authors ? book.authors.join(', ') : 'Unknown',
+                        description: book.description || 'No description available',
+                        rating: book.averageRating || 0,
+                        cover: book.imageLinks ? book.imageLinks.thumbnail : ''
+                    };
+
+                    // Display book information
+                    document.getElementById('book-title').innerText = currentBook.title;
+                    document.getElementById('book-author').innerText = currentBook.author;
+                    document.getElementById('book-description').innerText = currentBook.description;
+                    document.getElementById('book-rating').innerHTML = generateStars(currentBook.rating);
+                    document.getElementById('book-cover').src = currentBook.cover;
+                }
+            }
+
+            // Function to generate star rating
+            function generateStars(rating) {
+                let stars = '';
+                const fullStars = Math.floor(rating);
+                const emptyStars = 5 - fullStars;
+
+                for (let i = 0; i < fullStars; i++) {
+                    stars += '★'; // Full star
+                }
+                for (let i = 0; i < emptyStars; i++) {
+                    stars += '☆'; // Empty star
+                }
+
+                return stars;
+            }
+
+            // Function to check if book is already in a list
+            function isBookInList(book, list) {
+                const listItems = list.getElementsByTagName('li');
+                for (let item of listItems) {
+                    if (item.textContent.includes(book.title)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            // Function to remove book from all lists
+            function removeBookFromAllLists(book) {
+                const allLists = [tbrList, readingList, completedList];
+                allLists.forEach(list => {
+                    const listItems = list.getElementsByTagName('li');
+                    for (let item of listItems) {
+                        if (item.textContent.includes(book.title)) {
+                            list.removeChild(item);
+                            break;
+                        }
+                    }
+                });
+            }
+
+            // Function to create a book list item
+            function createBookElement(book, section) {
+                const li = document.createElement('li');
+                li.dataset.bookId = book.id;
+                li.innerHTML = `<img src="${book.cover}" alt="Book Cover"><span>${book.title} by ${book.author} - Rating: ${generateStars(book.rating)}</span>`;
+                li.classList.add('book-item');
+                li.addEventListener('click', () => {
+                    removeBookFromAllLists(book);  // Remove from current list before moving
+                    moveBookBetweenLists(book, section);
+                });
+                return li;
+            }
+
+            // Function to move book between lists
+            function moveBookBetweenLists(book, section) {
+                let currentList;
+                switch (section) {
+                    case 'TBR':
+                        currentList = tbrList;
+                        break;
+                    case 'Reading':
+                        currentList = readingList;
+                        break;
+                    case 'Completed':
+                        currentList = completedList;
+                        break;
+                    default:
+                        return;
+                }
+
+                // Add to the target list (current section)
+                const li = createBookElement(book, section);
+                currentList.appendChild(li);
+            }
+
+            // Function to update book status in the database via AJAX
+ function updateBookStatus(bookId, newStatus) {
+    console.log('Book ID:', bookId);  
+    console.log('Status:', newStatus); 
+    
+    if (!bookId) {
+        console.error('Book ID is missing');
+        return;
+    }
+
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const updateBookStatusUrl = window.location.origin + "/dashboard/updatebookstatus/";
+ // Corrected URL
+
+ $.ajax({
+    type: 'POST',
+    url:'/dashboard/updatebookstatus/',
+    data: {
+        'book_id': bookId,
+        'status': status,
+        csrfmiddlewaretoken: '{{ csrf_token }}'  // Add CSRF token if you're not using @csrf_exempt
+    },
+    success: function(response) {
+        console.log('Book status updated successfully');
+    },
+    error: function(xhr, status, error) {
+        console.log('Error:', error);
+    }
+});
+
+}
+
+
+
+            // Event listeners for buttons
+            tbrButton.addEventListener('click', () => {
+                console.log('Add to TBR button clicked');
+                if (currentBook && !isBookInList(currentBook, tbrList)) {
+                    removeBookFromAllLists(currentBook);  // Remove from other lists if present
+                    const li = createBookElement(currentBook, 'TBR');
+                    tbrList.appendChild(li);
+                    updateBookStatus(currentBook.id, 'TBR');  // Update book status to TBR
+                }
+            });
+
+            readingButton.addEventListener('click', () => {
+                if (currentBook) {
+                    removeBookFromAllLists(currentBook);  // Remove from other lists if present
+                    const li = createBookElement(currentBook, 'Reading');
+                    readingList.appendChild(li);
+                    updateBookStatus(currentBook.id, 'Reading');  // Update book status to Reading
+                }
+            });
+
+            completedButton.addEventListener('click', () => {
+                if (currentBook) {
+                    removeBookFromAllLists(currentBook);  // Remove from other lists if present
+                    const li = createBookElement(currentBook, 'Completed');
+                    completedList.appendChild(li);
+                    updateBookStatus(currentBook.id, 'Completed');  // Update book status to Completed
+                }
+            });
+
+            // Adding the search functionality on book search button click
+            document.getElementById('search-button').addEventListener('click', searchBooks);
+        });
+        function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+// Replace the jQuery AJAX call with the Fetch API
+
+
+
+    </script>
+</body>
+</html>

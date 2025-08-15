@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BookVibe</title>
+    
+<body class="about-us-page">
+  <!-- Header Section -->
+  {% include 'header.html' %}
+  
+  <!-- Main Content Section -->
+  <div class="container" style="margin-top: 100px;"> <!-- To offset the fixed header -->
+    <div class="row">
+        <!-- Left Column: Logo Image -->
+        <div class="col-md-3">
+            <img src="{% static 'img/logo.png' %}" class="img-fluid" alt="BookVibe Logo">
+        </div>
+
+        <!-- Middle Column: About Us Information -->
+        <div class="col-md-4 about-section">
+            <h2>ABOUT US</h2>
+            <p>Welcome to BookVibe – your ultimate destination for discovering the best books across all genres! Whether you’re a lifelong reader or just starting your literary journey, we’re here to help you find your next great read.</p>
+        </div>
+
+        <!-- Right Column: Our Mission -->
+        <div class="col-md-4 about-section">
+            <h2>Our Mission</h2>
+            <p>At BookVibe, we believe that the right book can change your life. Our mission is to make it easier for readers like you to find books that resonate, inspire, and entertain. We curate recommendations from a wide variety of genres, ensuring there’s something for everyone.</p>
+        </div>
+
+        <!-- Left Column: What We Do -->
+        <div class="col-md-4 about-section">
+            <h2>What We Do</h2>
+            <p>We handpick books based on quality, relevance, and enjoyment. Each recommendation is thoughtfully reviewed to provide you with detailed insights, so you can make informed choices on your next book. Our team of avid readers, critics, and book enthusiasts work together to bring you up-to-date suggestions.</p>
+        </div>
+
+        <!-- Right Column: Why Choose Us -->
+        <div class="col-md-4 about-section">
+            <h2>Why Choose Us?</h2>
+            <p>
+                Personalized Recommendations: Get curated lists that cater to your reading preferences.<br>
+                Expert Reviews: Our team reads and reviews each book to provide honest, thoughtful opinions.<br>
+                Diverse Selections: From timeless classics to the latest bestsellers, we cover all genres.<br>
+                Reading Community: Join a like-minded community of book lovers, where you can share recommendations.
+            </p>
+        </div>
+
+        <!-- Bottom Column: Book Image -->
+        <div class="col-md-3">
+            <img src="{% static 'img/bookblack2.jpg' %}" class="img-fluid" alt="Book Image">
+        </div>
+    </div>
+  </div>
+  
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h3>About Us</h3>
+        <p>We are passionate about books, providing a curated collection of trending and classic reads for every book lover. Join our community of readers and explore the world of literature.</p>
+      </div>
+      <div class="footer-section categories">
+        <h3>Book Categories</h3>
+        <ul>
+          <li><a href="#">Dystopian</a></li>
+          <li><a href="#">Non-Fiction</a></li>
+          <li><a href="#">Mystery</a></li>
+          <li><a href="#">Fantasy</a></li>
+          <li><a href="#">Science Fiction</a></li>
+          <li><a href="#">Classics</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" target="_blank" class="social-icon">Facebook</a>
+          <a href="#" target="_blank" class="social-icon">Twitter</a>
+          <a href="#" target="_blank" class="social-icon">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>Email: <a href="mailto:info@bookstore.com">info@bookstore.com</a></li>
+          <li>Phone: +1 (123) 456-7890</li>
+          <li>Address: 123 Book Street, Booktown</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 BookVibe. By SHREYA GOKULE.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

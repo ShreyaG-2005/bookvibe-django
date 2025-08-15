@@ -1,0 +1,560 @@
+header {
+    padding: 10px 0;
+  }
+  .logo {
+    height: 50px; /* Adjust the logo size */
+  }
+  #header{
+  font-family:Georgia ;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(123, 7, 7, 0.7);
+  
+  }
+  .carousel-caption h5 {
+    font-size: 2.5rem; /* Larger text for title */
+    font-weight: bold;
+    font-family: 'Times New Roman';
+  }
+  .carousel-caption p {
+    font-size: 1.2rem;
+    font-family:'Georgia';
+     /* Slightly smaller text for description */
+  }
+  .constructions .card-item {
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  position: relative;
+  border-radius: 0;
+  }
+  
+  .constructions .card-item .card-bg {
+  min-height: 100px;
+  position: relative;
+  }
+  
+  .constructions .card-item .card-bg img {
+  position: absolute;
+  inset: 0;
+  display:block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  }
+  
+  .constructions .card-item .card-body {
+  padding: 20px;
+  }
+  
+  .constructions .card-item h4 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-family: Georgia;
+  }
+  
+  .constructions .card-item p {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin: 0;
+  }
+  .trendingfinal h1{
+    padding:40px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  #trending{
+  text-align:center;
+  font-family: Georgia;
+  font-weight:bold ;
+  padding: 40px;
+  font-weight: 300;
+  color:rgba(53, 1, 57, 0.92)
+  }
+  #div{
+  display: block;
+  unicode-bidi: isolate;
+  border-style:groove;
+  border-width: 3px;
+  border-radius: 10px;
+  }
+  /* card img */
+  #cardimg{
+      height:275px;
+      width:100%;
+      
+   }
+  .card h5{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .card-wrapper{
+    display:flex;
+    align-items: center;
+    width:calc(100/4);
+   box-shadow:#470404e6
+  }
+  
+  .card {
+    margin: 0.5em;
+    border-radius: 25px;
+   
+  }
+  /*--------------trendings----------------------*/
+  
+  
+  /*----------------------------------------------------------------------------------------------------------
+  GENRE----------------------------------------------------------------------*/
+  .genre-wrapper{
+    display:flex;
+  
+  
+  }
+  .genre{
+    display:flex;
+    background-color:rgb(241, 232, 232);
+    padding:20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 90px 0px rgba(255, 248, 248, 0.329);
+    border-bottom: 5px solid var(--surface-color);
+    height: 100%;
+    margin: 0.5em;
+    
+  }
+  .genre h1{
+    text-align: center;
+  
+    font-family:Georgia;
+  
+  }
+  .genre img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .genre p{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+  .genre a{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align:right;
+    color:rgb(103, 6, 6);
+    
+  
+  }
+  
+  
+  
+  
+  
+  /* ----------------------------------------------------------------------testimonials------------------------------------------*/
+  #testimonialblock {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4f1;
+    margin: 0;
+    padding: 0;
+    width:100%;
+  }
+  
+  .testimonials {
+    display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      padding: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .testimonial-block {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 15px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .testimonial-block:hover {
+    transform: translateY(-10px);
+  }
+  
+  .testimonial-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .testimonial-author {
+    font-size: 1rem;
+    color: #777;
+    font-style: italic;
+    text-align: right;
+  }
+  
+  
+  
+  /* General Footer Styling */
+  .footer {
+      background-color: #2C3E50;         /* Dark blue background */
+      color: #ecf0f1;                    /* Light text color */
+      padding: 30px 0;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    
+    .footer-section {
+      flex: 1;
+      padding: 10px;
+      margin-right: 20px;
+    }
+    
+    .footer-section h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #ecf0f1;
+    }
+    
+    .footer-section p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .footer-section a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+    
+    .footer-section .social-icons {
+      margin-top: 15px;
+    }
+    
+    .social-icon {
+      font-size: 20px;
+      margin-right: 15px;
+      color: #ecf0f1;
+    }
+    
+    .social-icon:hover {
+      color: #3498db; /* Change to blue on hover */
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #bdc3c7;
+    }
+    
+    .footer-bottom a {
+      color: #bdc3c7;
+      text-decoration: none;
+    }
+    
+    .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+  .footer .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid 
+  color-mix(in srgb, var(--default-color), transparent 50%);
+      font-size: 16px;
+      color: 
+  color-mix(in srgb, var(--default-color), transparent 20%);
+      margin-right: 10px;
+      transition: 0.3s;
+  }
+    /*---------------about us------------*/
+   /* Common Styles (styles.css) */
+  
+  /* General Styles (styles.css) */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* About Us Page Specific Styles */
+  .about-us-page .about-section {
+    background-color: #e7e2df;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us-page .about-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .about-us-page .container {
+    margin-top: 100px; /* To account for the fixed header */
+  }
+  
+  .about-us-page .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .about-us-page .col-md-3,
+  .about-us-page .col-md-4 {
+    margin-bottom: 20px;
+  }
+  
+  /* Ensure logo image doesn't stretch */
+  .about-us-page .logo {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  /* Footer Styling */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 40px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    margin-right: 20px;
+  }
+  
+  .footer-section h3 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    background-color: #222;
+    color: #aaa;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-us-page .row {
+        flex-direction: column;
+    }
+  
+    .about-us-page .col-md-4 {
+        margin-bottom: 20px;
+    }
+  
+    .about-us-page .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+  /*---------------fantasy--------------------*/
+  /* Global styles for other pages remain here */
+  
+  /* Styles specific to the Book Recommendations page */
+  body.book-recommendations-page {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/bg-image2.jpg');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #333;
+  }
+  
+  /* Container and Layout specific to the book recommendations page */
+  .book-recommendations-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
+  
+  /* Book Rows (Two books per row) */
+  .book-recommendations-page .book-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  /* Book Block */
+  .book-recommendations-page .book {
+    display: flex;
+    flex: 0 0 48%;  /* 2 books per row with a 2% gap */
+    background-color: #e7dcdc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Book Hover Effect */
+  .book-recommendations-page .book:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Book Cover (using background-image now) */
+  .book-recommendations-page .book-cover {
+    flex: 1;
+    height: auto;
+    background-size:cover;
+    background-position:center;
+   
+   
+  }
+  .book-recommendations-page .book-cover img {
+    width:100%;
+    height:100%;
+  }
+  
+  /* Specific Background Images for Each Book */
+  .book-recommendations-page #lotr .book-cover {
+    background-image: url('images/lotr.jpg');
+  }
+  
+  .book-recommendations-page #asoiaf .book-cover {
+    background-image: url('images/a-song-of-ice-and-fire.jpg');
+  }
+  
+  .book-recommendations-page #name-of-the-wind .book-cover {
+    background-image: url('images/name-of-the-wind.jpg');
+  }
+  
+  .book-recommendations-page #six-of-crows .book-cover {
+    background-image: url('images/six-of-crows.jpg');
+  }
+  
+  /* Book Details */
+  .book-recommendations-page .book-details {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .book-recommendations-page .book-details h2 {
+    font-size: 1.8rem;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  .book-recommendations-page .book-details .author {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .book-recommendations-page .book-details .rating {
+    font-size: 1.3rem;
+    color: #f39c12;
+    margin-bottom: 15px;
+  }
+  
+  .book-recommendations-page .book-details .quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .book-recommendations-page .book-details .more-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .book-recommendations-page .book-details .more-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .book-recommendations-page .book-row {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .book-recommendations-page .book {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+  
+    .book-recommendations-page .book-details h2 {
+        font-size: 1.5rem;
+    }
+  
+    .book-recommendations-page .book-details .author {
+        font-size: 1rem;
+    }
+  
+    .book-recommendations-page .book-details .rating {
+        font-size: 1.1rem;
+    }
+  
+    .book-recommendations-page .book-details .quote {
+        font-size: 1rem;
+    }
+  }
+  
+  
